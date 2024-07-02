@@ -35,7 +35,7 @@ def calculate_node_degrees(graph):
     for node in graph.nodes():
         neighbors = list(graph.neighbors(node))
         degree = len(neighbors)
-        node_degrees[node] = degree
+        node_degrees[node] = degree+1
     return node_degrees
 
 def calculate_node_degree_weight_product(graph):
