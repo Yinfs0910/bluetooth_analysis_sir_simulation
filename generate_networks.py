@@ -22,7 +22,7 @@ def power_law(alpha, size):
     """
     C = (alpha - 1) / (size ** (1 - alpha) - 1)  # Normalization constant
     u = np.random.uniform(0, 1, size)
-    samples = (1 - u) ** (-1 / (alpha - 1))
+    samples = (1 - u) ** (-1 / (alpha - 1))//C
     return C * samples
 
 def momment_of_degree_distribution(g, n):
@@ -36,7 +36,7 @@ def momment_of_degree_distribution(g, n):
     Returns:
     float: The n-th moment of the degree distribution.
     """
-    degree_np = np.array(list(dict(g.degree).values()))
+    degree_np = np.array(list(dict(g.degree).values()))**n
     return (sum(degree_np ** n) / len(g))
 
 def weight_moment(weight, n):
