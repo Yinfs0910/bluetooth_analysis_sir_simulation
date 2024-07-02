@@ -17,7 +17,7 @@ def degree_moment(g, n):
     float: The nth degree moment of the graph.
     """
     degree_np = np.array(list(dict(g.degree).values()))
-    return (sum(degree_np**n)/len(g))
+    return (sum(degree_np**n)/len(g))*10000
 
 def weight_moment(weight, n):
     """
