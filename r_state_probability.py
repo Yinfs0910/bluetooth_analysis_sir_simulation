@@ -35,8 +35,8 @@ def calculate_node_degrees(graph):
     for node in graph.nodes():
         neighbors = list(graph.neighbors(node))
         degree = len(neighbors)
-        node_degrees[node] = degree
-    return node_degrees
+        node_degrees[node] = degree+1
+    return node_degrees/20
 
 def calculate_node_degree_weight_product(graph):
     """
@@ -103,7 +103,7 @@ def simulate_sir(G, beta, gamma, num_simulations):
 
 if __name__ == "__main__":
     # Parameters
-    beta = 0.084
+    beta = 0.08411
     gamma = 0.6
     num_simulations = 100
 
