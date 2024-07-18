@@ -25,3 +25,13 @@ def calcuate_networks():
     print(nx.floyd_warshall(g))
     # Calculate the diameter of the graph
     print(nx.diameter(g))
+    # Calculate the radius of the graph
+    print(nx.radius(g))
+    # Calculate the eccentricity of each node
+    print(nx.eccentricity(g))
+    # Calculate the average shortest path length
+    print(nx.average_shortest_path_length(g))
+    # Calculate the average clustering coefficient
+    print(nx.average_clustering(g))
+    # Calculate the transitivity of the graph
+    print(nx.transitivity(g))

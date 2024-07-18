@@ -16,6 +16,8 @@ def load_adj(filename):
 
     # Read the CSV file into a DataFrame with custom column names
     df = pd.read_csv(filename, header=None, names=custom_cols)
+    df = df[["Source", "Target", "Weight"]]
+    
 
     return df
 

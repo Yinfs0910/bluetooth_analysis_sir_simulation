@@ -90,6 +90,7 @@ def sir_sim(data, color, label):
     x = np.array(list(dict(SG.degree()).values()))
     y = np.array(list(dict(SG.degree(weight='weight')).values())).astype(int)
     kw = calculate_joint_moment(x, y)
+    print("k*w = ", kw)
 
     r_all = []
     lbd = []
@@ -102,6 +103,8 @@ def sir_sim(data, color, label):
             r.append(R[-1])
         r_all.append(np.mean(r))
         lbd.append(beta / mu)
+    
+    print("lambda_c = ", degree_moment(SG, 1) / kw)
 
     plt.plot(sorted(lbd), np.array(sorted(r_all)) / 10000, color, label=label)
     plt.ylim(0, 0.6)  # Set the y-axis range, adjust according to your data
